@@ -13,7 +13,12 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Permission
  * 
-
+ * @property int $id
+ * @property string $name
+ * @property string $guard_name
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * 
  * @property Collection|ModelHasPermission[] $model_has_permissions
  * @property Collection|Role[] $roles
  *
@@ -25,17 +30,12 @@ class Permission extends Model
 
 	protected $fillable = [
 		'name',
-		'group_id'
+		'guard_name'
 	];
 
 	public function model_has_permissions()
 	{
 		return $this->hasMany(ModelHasPermission::class);
-	}
-
-	public function groups()
-	{
-		return $this->belongTo(PermissionGroup::class, 'group_id', 'id');
 	}
 
 	public function roles()

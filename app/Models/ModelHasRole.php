@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
 class ModelHasRole extends Model
 {
 	protected $table = 'model_has_roles';
-	public $incrementing = true;
+	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
