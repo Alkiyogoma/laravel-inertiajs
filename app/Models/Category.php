@@ -11,34 +11,32 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Category
+ * Class Role
  * 
- * @property int $category_id
+ * @property int $id
  * @property string $name
- * @property Carbon $last_update
+ * @property string $guard_name
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * 
- * @property Collection|Film[] $films
+ * @property Collection|ModelHasRole[] $model_has_roles
+ * @property Collection|Permission[] $permissions
  *
  * @package App\Models
  */
 class Category extends Model
 {
-	protected $table = 'category';
-	protected $primaryKey = 'category_id';
-	public $timestamps = false;
-
-	protected $dates = [
-		'last_update'
-	];
+	protected $table = 'post_category';
 
 	protected $fillable = [
+		'id',
 		'name',
-		'last_update'
-	];
-
-	public function films()
+		'about'
+    ];
+    
+	public function posts()
 	{
-		return $this->belongsToMany(Film::class, 'film_category')
-					->withPivot('last_update');
+		return $this->hasMany(Post::class, 'id', 'category_id');
 	}
+
 }
