@@ -1,11 +1,19 @@
 
 
 
-# laravel-inertiajs
+# Laravel Inertiajs CRUD APP
 Inertia.js lets you quickly build modern single-page React, Vue and Svelte apps using classic server-side routing and controllers.
 
 Build single-page apps, without building an API.
 - **[Read More here](https://inertiajs.com/)**
+
+# Tailwind Windmill Dashboard
+It uses Tailwind CSS for styling, and some may say it is totally biased, but it uses the most simple theming plugin there is for it, 
+
+A multi theme, completely accessible, with components and pages examples, ready for production dashboard.
+- **[Preview Fronted Template here](https://windmill-dashboard.vercel.app/)**
+- **[Gir repo here](https://github.com/estevanmaito/windmill-dashboard)**
+
 
 # Installation Steps
 
